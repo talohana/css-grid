@@ -1,3 +1,7 @@
+:root {
+  --grey: #343436;
+}
+
 html {
   box-sizing: border-box;
   font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma,
@@ -31,4 +35,97 @@ h6 {
   font-weight: normal;
   margin: 0;
   font-size: 1.5em;
+}
+
+.codepen {
+  display: grid;
+  grid-template-rows: auto 1fr 1fr auto;
+  height: 100vh;
+  color: white;
+}
+
+.pen {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: black;
+  border-bottom: 5px solid var(--grey);
+}
+
+.button {
+  background-color: var(--grey);
+  color: white;
+  padding: 5px;
+  position: relative;
+  border: 0;
+  font-size: 15px;
+}
+
+.button--small {
+  font-size: 12px;
+  padding: 4px;
+}
+
+.button--dirty::before {
+  display: block;
+  content: "";
+  background-color: #ffc600;
+  height: 2px;
+  width: calc(100% - 3px);
+  border-radius: 10px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+.code {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #1b2b34;
+}
+
+.editor {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.editor__header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.editor__code {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.editor__number {
+  display: block;
+  padding: 0 10px;
+}
+
+.editor__input {
+  resize: none;
+  background: none;
+  border: 0;
+  color: grey;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.settings {
+  padding: 5px;
+  background: black;
+  border-top: 1px solid grey;
+}
+
+.preview {
+  display: grid;
 }
